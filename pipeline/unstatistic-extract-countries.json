@@ -237,16 +237,15 @@
 				"type": "SqlServerStoredProcedure",
 				"dependsOn": [
 					{
-						"activity": "Set variable PipelineExecutionStatus",
-						"dependencyConditions": [
-							"Succeeded",
-							"Skipped"
-						]
-					},
-					{
 						"activity": "Copy countries to SQL",
 						"dependencyConditions": [
 							"Skipped",
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "Set variable PipelineExecutionStatus",
+						"dependencyConditions": [
 							"Succeeded"
 						]
 					}
